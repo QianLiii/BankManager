@@ -11,28 +11,34 @@ CONFIG += c++11
 
 SOURCES += \
     assets_inspect.cpp \
+    clients_inspect.cpp \
     confirmbox.cpp \
     db_connection.cpp \
     login.cpp \
     main.cpp \
     mainwindow.cpp \
     manager_mainwindow.cpp \
+    manager_view.cpp \
     okbox.cpp \
     user_view.cpp
 
 HEADERS += \
     assets_inspect.h \
+    clients_inspect.h \
     confirmbox.h \
     db_connection.h \
     login.h \
     mainwindow.h \
     manager_mainwindow.h \
+    manager_view.h \
     okbox.h \
     user_view.h
 
 FORMS += \
     assets_inspect.ui \
+    clients_inspect.ui \
     confirmbox.ui \
+    manager_view.ui \
     user_view.ui \
     login.ui \
     mainwindow.ui \

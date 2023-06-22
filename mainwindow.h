@@ -42,18 +42,18 @@ signals:
 
 private slots:
     void receiveData(QString c_id, QString name);
-
+    void on_ReturnButton_clicked();
+//    接收返回信号
     void return_from_Fu();
     void return_from_Iu();
     void return_from_Wu();
     void return_from_Ai();
 
+//    点击事件
     void on_FundButton_clicked();
     void on_InsuranceButton_clicked();
     void on_WealthButton_clicked();
     void on_AssetsButton_clicked();
-
-    void on_ReturnButton_clicked();
 };
 
 
