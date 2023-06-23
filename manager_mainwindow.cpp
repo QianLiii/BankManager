@@ -6,7 +6,8 @@ Manager_MainWindow::Manager_MainWindow(QWidget *parent) :
     ui(new Ui::Manager_MainWindow),
     fm(0),
     im(1),
-    wm(2)
+    wm(2),
+    ci(11)
 {
     ui->setupUi(this);
     this->setWindowFlag(Qt::WindowContextHelpButtonHint, false);

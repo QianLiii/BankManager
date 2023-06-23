@@ -11,7 +11,7 @@
 #include <QtSql/QSqlError>
 #include <Qtsql/QSqlQuery>
 #include <QDebug>
-#include <QSqlQueryModel>
+#include <QSqlTableModel>
 #include <QDateTime>
 
 namespace Ui {
@@ -30,11 +30,18 @@ private slots:
     void receiveData();
     void on_ReturnButton_clicked();
 
+    void on_InsertButton_clicked();
+
+    void on_DeleteButton_clicked();
+
+    void on_SaveButton_clicked();
+
 signals:
     void backSignal();
 
 private:
     Ui::Manager_View *ui;
+    QSqlTableModel *mdl;
     //    0-fund, 1-insurance, 2-wealth
     int wd_type;
     Ui::DB_connection DB_conn;

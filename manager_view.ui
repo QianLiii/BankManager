@@ -53,6 +53,45 @@
      <string notr="true">background:rgba(255,255,255,200)</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="SaveButton">
+    <property name="geometry">
+     <rect>
+      <x>850</x>
+      <y>530</y>
+      <width>92</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>保  存</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="InsertButton">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>530</y>
+      <width>92</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>新  增</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="DeleteButton">
+    <property name="geometry">
+     <rect>
+      <x>750</x>
+      <y>530</y>
+      <width>92</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>删  除</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

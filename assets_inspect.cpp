@@ -21,6 +21,7 @@ void Assets_inspect::receiveData(QString c_id)
     ui->tableView->setModel(mdl);
     ui->tableView->setContextMenuPolicy(Qt::CustomContextMenu);
     ui->tableView->setSelectionBehavior(QAbstractItemView::SelectRows);
+    ui->tableView->setSelectionMode(QAbstractItemView::SingleSelection);
     TextReplacerDelegate* del = new TextReplacerDelegate(10, this);
     ui->tableView->setItemDelegate(del);
 

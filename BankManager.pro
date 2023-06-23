@@ -11,7 +11,6 @@ CONFIG += c++11
 
 SOURCES += \
     assets_inspect.cpp \
-    clients_inspect.cpp \
     confirmbox.cpp \
     db_connection.cpp \
     login.cpp \
@@ -25,7 +24,6 @@ SOURCES += \
 
 HEADERS += \
     assets_inspect.h \
-    clients_inspect.h \
     confirmbox.h \
     db_connection.h \
     login.h \
@@ -38,7 +36,6 @@ HEADERS += \
 
 FORMS += \
     assets_inspect.ui \
-    clients_inspect.ui \
     confirmbox.ui \
     manager_view.ui \
     user_view.ui \

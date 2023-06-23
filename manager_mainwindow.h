@@ -2,7 +2,6 @@
 #define MANAGER_MAINWINDOW_H
 
 #include "manager_view.h"
-#include "clients_inspect.h"
 
 #include <QMainWindow>
 
@@ -48,7 +47,7 @@ private:
     Manager_View fm;
     Manager_View im;
     Manager_View wm;
-    Clients_inspect ci;
+    Manager_View ci;
 
 };
 

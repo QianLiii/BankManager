@@ -23,6 +23,7 @@ void User_View::receiveData(QString c_id)
     ui->tableView->setModel(mdl);
     ui->tableView->setContextMenuPolicy(Qt::CustomContextMenu);
     ui->tableView->setSelectionBehavior(QAbstractItemView::SelectRows);
+    ui->tableView->setSelectionMode(QAbstractItemView::SingleSelection);
     TextReplacerDelegate* del = new TextReplacerDelegate(wd_type, this);
     ui->tableView->setItemDelegate(del);
 
