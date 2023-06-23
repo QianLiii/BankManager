@@ -18,6 +18,12 @@ void Assets_inspect::receiveData(QString c_id)
 {
     client_id = c_id;
     mdl = new QSqlQueryModel(this);
+    ui->tableView->setModel(mdl);
+    ui->tableView->setContextMenuPolicy(Qt::CustomContextMenu);
+    ui->tableView->setSelectionBehavior(QAbstractItemView::SelectRows);
+    TextReplacerDelegate* del = new TextReplacerDelegate(10, this);
+    ui->tableView->setItemDelegate(del);
+
     QString sql = QString("select P_NO as '产品编号', F_NAME as '产品名称', STATUS as '资产状态', "
                           "START_DATE as '购买日期', AMOUNT as '数量', PROFIT as '收益' from "
                           "PURCHASE_FUND, FUND where OWNER_ID = '%1' and P_NO = F_NO "
@@ -33,9 +39,7 @@ void Assets_inspect::receiveData(QString c_id)
 
 
 
-    ui->tableView->setModel(mdl);
-    ui->tableView->setContextMenuPolicy(Qt::CustomContextMenu);
-    ui->tableView->setSelectionBehavior(QAbstractItemView::SelectRows);
+
 }
 
 void Assets_inspect::on_ReturnButton_clicked()

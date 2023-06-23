@@ -2,6 +2,7 @@
 #define ASSETS_INSPECT_H
 
 #include "db_connection.h"
+#include "textreplacerdelegate.h"
 
 #include <QMainWindow>
 #include <QString>

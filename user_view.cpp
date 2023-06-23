@@ -20,6 +20,12 @@ void User_View::receiveData(QString c_id)
 {
     client_id = c_id;
     mdl = new QSqlQueryModel(this);
+    ui->tableView->setModel(mdl);
+    ui->tableView->setContextMenuPolicy(Qt::CustomContextMenu);
+    ui->tableView->setSelectionBehavior(QAbstractItemView::SelectRows);
+    TextReplacerDelegate* del = new TextReplacerDelegate(wd_type, this);
+    ui->tableView->setItemDelegate(del);
+
     if(wd_type == 0)
     {
         mdl->setQuery("select * from fund", Ui::DB_connection::db);
@@ -49,9 +55,7 @@ void User_View::receiveData(QString c_id)
         mdl->setHeaderData(3, Qt::Horizontal, "产品年限");
         mdl->setHeaderData(4, Qt::Horizontal, "金额");
     }
-    ui->tableView->setModel(mdl);
-    ui->tableView->setContextMenuPolicy(Qt::CustomContextMenu);
-    ui->tableView->setSelectionBehavior(QAbstractItemView::SelectRows);
+
 }
 
 void User_View::on_ReturnButton_clicked()
@@ -99,7 +103,7 @@ void User_View::on_PurchaseButton_clicked()
         else
         {
             QString cur_time = QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss");
-            QString sql = QString("insert into purchase_%1 values('%2', '%3', 'NORMAL', '%4', 1, 0)")
+            QString sql = QString("insert into purchase_%1 values('%2', '%3', 1, '%4', 1, 0)")
                     .arg(type_name).arg(product_id).arg(client_id).arg(cur_time);
             if(!q_purchase.exec(sql))
             {

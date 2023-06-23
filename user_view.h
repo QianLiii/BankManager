@@ -4,6 +4,7 @@
 #include "db_connection.h"
 #include "okbox.h"
 #include "confirmbox.h"
+#include "textreplacerdelegate.h"
 
 #include <QMainWindow>
 #include <QString>

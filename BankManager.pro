@@ -20,6 +20,7 @@ SOURCES += \
     manager_mainwindow.cpp \
     manager_view.cpp \
     okbox.cpp \
+    textreplacerdelegate.cpp \
     user_view.cpp
 
 HEADERS += \
@@ -32,6 +33,7 @@ HEADERS += \
     manager_mainwindow.h \
     manager_view.h \
     okbox.h \
+    textreplacerdelegate.h \
     user_view.h
 
 FORMS += \
