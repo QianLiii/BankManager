@@ -68,6 +68,11 @@
       <height>28</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+     </font>
+    </property>
     <property name="text">
      <string>保  存</string>
     </property>
@@ -75,11 +80,16 @@
    <widget class="QPushButton" name="InsertButton">
     <property name="geometry">
      <rect>
-      <x>640</x>
+      <x>630</x>
       <y>530</y>
       <width>92</width>
       <height>28</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+     </font>
     </property>
     <property name="text">
      <string>新  增</string>
@@ -88,11 +98,16 @@
    <widget class="QPushButton" name="DeleteButton">
     <property name="geometry">
      <rect>
-      <x>750</x>
+      <x>740</x>
       <y>530</y>
       <width>92</width>
       <height>28</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+     </font>
     </property>
     <property name="text">
      <string>删  除</string>
@@ -105,7 +120,7 @@
      <x>0</x>
      <y>0</y>
      <width>980</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>
