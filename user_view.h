@@ -13,6 +13,7 @@
 #include <Qtsql/QSqlQuery>
 #include <QDebug>
 #include <QSqlQueryModel>
+#include <QItemSelectionModel>
 #include <QDateTime>
 
 namespace Ui {
@@ -30,9 +31,8 @@ public:
 private slots:
     void receiveData(QString c_id);
     void on_ReturnButton_clicked();
-
-
     void on_PurchaseButton_clicked();
+    void selection_check();
 
 signals:
     void backSignal();
@@ -42,6 +42,7 @@ private:
 
     Ui::User_View *ui;
     QSqlQueryModel *mdl;
+    QItemSelectionModel * sel_mdl;
     Ui::DB_connection DB_conn;
     QString client_id;
 };

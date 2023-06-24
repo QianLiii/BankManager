@@ -9,6 +9,7 @@ Login::Login(QWidget *parent) :
     ui->setupUi(this);
     this->setWindowFlag(Qt::WindowContextHelpButtonHint, false);
     this->setWindowTitle("登录");
+
     connect(&mw, SIGNAL(signOut()), this, SLOT(return_from_MW()));
     connect(&mng_mw, SIGNAL(signOut()), this, SLOT(return_from_MNG_MW()));
 
@@ -64,7 +65,7 @@ void Login::on_LoginButton_clicked()
                          {
                              q_name.next();
                              QString NAME = q_name.value(0).toString();
-                             connect(this, SIGNAL(send_to_MW(QString, QString)), &mw, SLOT(receiveData(QString, QString)));
+                             connect(this, SIGNAL(send_to_MW(QString,QString)), &mw, SLOT(receiveData(QString,QString)));
                              emit send_to_MW(CLIENT_ID, NAME);
                              this->close();
                              mw.show();

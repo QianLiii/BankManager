@@ -3,6 +3,7 @@
 
 #include <QItemDelegate>
 #include <QPainter>
+#include <QDebug>
 
 class TextReplacerDelegate : public QItemDelegate
 {

@@ -19,13 +19,19 @@ User_View::~User_View()
 void User_View::receiveData(QString c_id)
 {
     client_id = c_id;
+    ui->PurchaseButton->setEnabled(false);
     mdl = new QSqlQueryModel(this);
     ui->tableView->setModel(mdl);
     ui->tableView->setContextMenuPolicy(Qt::CustomContextMenu);
     ui->tableView->setSelectionBehavior(QAbstractItemView::SelectRows);
     ui->tableView->setSelectionMode(QAbstractItemView::SingleSelection);
+//    项目委托
     TextReplacerDelegate* del = new TextReplacerDelegate(wd_type, this);
     ui->tableView->setItemDelegate(del);
+//    选择模型
+    sel_mdl = new QItemSelectionModel(mdl);
+    ui->tableView->setSelectionModel(sel_mdl);
+    connect(sel_mdl, SIGNAL(selectionChanged(QItemSelection,QItemSelection)), this, SLOT(selection_check()));
 
     if(wd_type == 0)
     {
@@ -64,7 +70,6 @@ void User_View::on_ReturnButton_clicked()
     emit backSignal();
 
 }
-
 
 void User_View::on_PurchaseButton_clicked()
 {
@@ -116,3 +121,16 @@ void User_View::on_PurchaseButton_clicked()
     }
 }
 
+void User_View::selection_check()
+{
+    if(sel_mdl->hasSelection())
+    {
+        qDebug()<<"haha1";
+        ui->PurchaseButton->setEnabled(true);
+    }
+    else
+    {
+        qDebug()<<"haha2";
+        ui->PurchaseButton->setEnabled(false);
+    }
+}

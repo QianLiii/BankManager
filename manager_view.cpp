@@ -69,6 +69,7 @@ void Manager_View::receiveData()
 void Manager_View::on_InsertButton_clicked()
 {
     mdl->insertRow(mdl->rowCount());
+    ui->tableView->scrollToBottom();
 }
 
 

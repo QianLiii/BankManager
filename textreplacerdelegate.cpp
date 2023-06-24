@@ -8,15 +8,24 @@ TextReplacerDelegate::TextReplacerDelegate(int type, QObject* parent):
 }
 void TextReplacerDelegate::paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const
     {
+//        蓝：enabled,selected,active灰：enabled,selected
         int col = index.column();
+        int row = index.row();
+        if(row == 0){qDebug()<<col<<": "<<option.state;}
 
         QColor whi(255,255,255), blk(0,0,0);
 //                选中设置
-        if (option.state & QStyle::State_Selected)
+//        选中且活跃态
+        if ((option.state & (QStyle::State_Selected | QStyle::State_Active)) == (QStyle::State_Selected | QStyle::State_Active))
         {
         //    选中时设置背景色，更改文字颜色为白色
             painter->fillRect(option.rect, option.palette.highlight());
             painter->setPen(whi);
+        }
+        //        选中但非活跃态
+        else if((option.state & QStyle::State_Selected) == QStyle::State_Selected)
+        {
+            painter->fillRect(option.rect, option.palette.midlight());
         }
         else
         {
@@ -38,7 +47,6 @@ void TextReplacerDelegate::paint(QPainter* painter, const QStyleOptionViewItem& 
                 {
                     text = "货币基金";
                 }
-
                 painter->drawText(option.rect, Qt::AlignVCenter, text);
             }
 //            risk
@@ -70,7 +78,7 @@ void TextReplacerDelegate::paint(QPainter* painter, const QStyleOptionViewItem& 
 //            other
             else
             {
-                QItemDelegate::paint(painter, option, index);
+                painter->drawText(option.rect, Qt::AlignVCenter, index.data().toString());
             }
         }
 //        insurance
@@ -115,7 +123,7 @@ void TextReplacerDelegate::paint(QPainter* painter, const QStyleOptionViewItem& 
 //            other
             else
             {
-                QItemDelegate::paint(painter, option, index);
+                painter->drawText(option.rect, Qt::AlignVCenter, index.data().toString());
             }
         }
 //        assets inspect
@@ -138,7 +146,7 @@ void TextReplacerDelegate::paint(QPainter* painter, const QStyleOptionViewItem& 
 //            other
             else
             {
-                QItemDelegate::paint(painter, option, index);
+                painter->drawText(option.rect, Qt::AlignVCenter, index.data().toString());
             }
         }
 //        other tables

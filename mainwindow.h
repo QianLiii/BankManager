@@ -4,7 +4,6 @@
 #include <user_view.h>
 #include <assets_inspect.h>
 
-
 #include <QMainWindow>
 #include <QDebug>
 #include <QString>
