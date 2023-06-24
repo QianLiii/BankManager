@@ -41,8 +41,14 @@
      <enum>Qt::StrongFocus</enum>
     </property>
     <property name="styleSheet">
-     <string notr="true">background:url(:/images/button1-1.png);
-border-radius:20px;</string>
+     <string notr="true">QPushButton {
+    background:url(:/images/button1-1.png);
+	border-radius:20px;
+}
+QPushButton:hover {
+    background: url(:/images/b1-1.jpg);
+}
+</string>
     </property>
     <property name="text">
      <string>基  金</string>
@@ -72,8 +78,14 @@ border-radius:20px;</string>
      <bool>false</bool>
     </property>
     <property name="styleSheet">
-     <string notr="true">background:url(:/images/button1-3.png);
-border-radius:20px;</string>
+     <string notr="true">QPushButton {
+    background:url(:/images/button1-3.png);
+	border-radius:20px;
+}
+QPushButton:hover {
+    background: url(:/images/b1-3.jpg);
+}
+</string>
     </property>
     <property name="text">
      <string>理  财</string>
@@ -101,8 +113,13 @@ border-radius:20px;</string>
      <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
-     <string notr="true">background:url(:/images/button1-2.png);
-border-radius:20px;
+     <string notr="true">QPushButton {
+    background:url(:/images/button1-2.png);
+	border-radius:20px;
+}
+QPushButton:hover {
+    background: url(:/images/b1-2.jpg);
+}
 </string>
     </property>
     <property name="text">
@@ -130,8 +147,14 @@ border-radius:20px;
      <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
-     <string notr="true">background:url(:/images/button1-4.png);
-border-radius:20px;</string>
+     <string notr="true">QPushButton {
+    background:url(:/images/button1-4.png);
+	border-radius:20px;
+}
+QPushButton:hover {
+    background: url(:/images/b1-4.jpg);
+}
+</string>
     </property>
     <property name="text">
      <string>查看资产</string>
@@ -190,7 +213,7 @@ border-radius:20px;</string>
      <x>0</x>
      <y>0</y>
      <width>980</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

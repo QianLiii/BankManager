@@ -14,5 +14,13 @@
         <file>images/back.jpg</file>
         <file>images/login.jpg</file>
         <file>images/back_fuzzy.jpg</file>
+        <file>images/b1-1.jpg</file>
+        <file>images/b1-2.jpg</file>
+        <file>images/b1-3.jpg</file>
+        <file>images/b1-4.jpg</file>
+        <file>images/b2-1.jpg</file>
+        <file>images/b2-2.jpg</file>
+        <file>images/b2-3.jpg</file>
+        <file>images/b2-4.jpg</file>
     </qresource>
 </RCC>
